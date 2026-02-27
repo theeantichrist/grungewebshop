@@ -11,7 +11,7 @@ html, body {
 }
 
 body {
-    background-color: #b3b3b3; /* Grijze achtergrond van design */
+    background-color: #b3b3b3; /* De grijze achtergrond uit design */
     font-family: 'Kaisei Tokumin', serif;
     font-weight: 800;
     display: flex;
@@ -19,48 +19,60 @@ body {
 }
 
 main {
-    flex: 1 0 auto; /* Zorgt dat de footer altijd onderaan staat */
+    flex: 1 0 auto;
 }
 
-/* --- NAVIGATIE (MEEBEWEGEND) --- */
+/* --- VERBETERDE HEADER (MEEBEWEGEND & AESTHETIC) --- */
 header {
-    background: #333;
+    background: #1a1a1a; /* Dieper zwart */
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 20px 0;
     position: sticky;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
     border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 1.3rem;
+    letter-spacing: 5px; /* De ruime spacing */
+    text-transform: uppercase;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 35px; /* Meer ruimte tussen Shop, Archief en Contact */
 }
 
 nav a { 
     color: white; 
     text-decoration: none;
-    transition: 0.3s;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
 
 nav a:hover {
-    color: #b3b3b3;
+    opacity: 1;
 }
 
 /* --- HERO SECTION --- */
 .hero {
     display: flex;
     justify-content: center;
-    padding: 40px 0;
+    padding: 30px 0; /* Iets minder padding zodat foto dichter bij header komt */
 }
 
 .hero-image img {
-    max-width: 800px;
-    width: 90%;
+    max-width: 900px;
+    width: 95%;
     border: 1px solid #000;
 }
 
@@ -69,7 +81,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
     gap: 15px;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -85,10 +97,10 @@ article.product {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Kleding items bewegen omhoog bij hover */
+/* Items bewegen subtiel omhoog bij hover */
 article.product:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     cursor: pointer;
 }
 
@@ -102,7 +114,7 @@ article.product img {
 
 /* --- PRODUCT FOOTER (DE GRIJZE BALK) --- */
 .product-footer {
-    height: 80px;
+    height: 85px;
     background-color: #4d4d4d;
     width: 100%;
     display: flex;
@@ -116,14 +128,14 @@ article.product img {
     color: #b3b3b3;
     font-size: 10px;
     text-transform: uppercase;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
+    margin-bottom: 6px;
+    letter-spacing: 1.5px;
     text-align: center;
 }
 
 .price {
     color: white;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
 }
 
@@ -132,9 +144,9 @@ article.product img {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 6px 12px;
+    padding: 7px 14px;
     color: white;
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     z-index: 10;
 }
@@ -145,21 +157,41 @@ article.product img {
 /* --- FOOTER --- */
 footer {
     flex-shrink: 0;
-    background: #333;
+    background: #1a1a1a;
     color: white;
-    padding: 20px;
+    padding: 25px;
     text-align: center;
+    border-top: 1px solid #000;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* --- RESPONSIVE DESIGN FIXES --- */
 @media (max-width: 1024px) {
     .product-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 600px) {
-    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .product-footer { height: 60px; }
-    .price { font-size: 13px; }
-    .product-name { font-size: 8px; }
-    header { padding: 10px; }
+    header {
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+
+    nav ul {
+        gap: 20px; /* Zorgt dat de tekst niet tegen de randen de telefoon komt */
+    }
+
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        padding: 10px;
+    }
+    
+    .product-footer { height: 70px; }
+    .price { font-size: 14px; }
+    .product-name { font-size: 9px; }
 }
