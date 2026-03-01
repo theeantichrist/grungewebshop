@@ -45,7 +45,6 @@ nav {
     font-size: 1.3rem;
     letter-spacing: 5px;
     text-transform: uppercase;
-    /* Reset h1 styling */
     margin: 0;
     font-weight: 800;
 }
@@ -71,7 +70,8 @@ nav a:hover { opacity: 1; }
 /* --- HERO & CTA --- */
 .hero {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 40px 0;
 }
 
@@ -89,21 +89,25 @@ nav a:hover { opacity: 1; }
     margin-bottom: 25px;
 }
 
+/* FIX VOOR DE KNOP: Exacte styling van je screenshot */
 .cta-button {
     background-color: #1a1a1a;
-    color: white;
+    color: white !important; /* Dwingt witte tekst af */
     padding: 16px 45px;
-    text-decoration: none;
+    text-decoration: none !important; /* Dwingt wegvallen onderstreping af */
     font-size: 13px;
     letter-spacing: 4px;
     border: 1px solid #000;
     text-transform: uppercase;
     transition: all 0.4s ease-in-out;
+    display: inline-block;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 .cta-button:hover {
     background-color: white;
-    color: #1a1a1a;
+    color: #1a1a1a !important;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
@@ -200,6 +204,6 @@ footer {
 @media (max-width: 650px) {
     .product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .logo { font-size: 1.1rem; letter-spacing: 3px; }
-    nav ul { gap: 20px; }
-    .cta-button { padding: 12px 30px; font-size: 11px; }
+    nav ul { gap: 15px; }
+    .cta-button { padding: 12px 30px; font-size: 11px; letter-spacing: 2px; }
 }
